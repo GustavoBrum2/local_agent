@@ -1,0 +1,12 @@
+{
+    "generatedAt": "2026-05-23T20:00:06.535Z",
+    "source": "C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\pcmatch-normalizer\\buildcores-open-db",
+    "counts": {
+        "cpus": 788,
+        "gpus": 3798,
+        "motherboards": 3644,
+        "ram": 4478,
+        "ssds": 2661,
+        "hdds": 0
+    }
+}
