@@ -1,12 +1,12 @@
 [package]
-name = "pc-match-desktop"
+name = "local-chat-desktop"
 version = "0.1.0"
-description = "PC Match Desktop MVP"
-authors = ["PC Match"]
+description = "Local Chat Desktop"
+authors = ["Local Chat"]
 edition = "2021"
 
 [lib]
-name = "pc_match_desktop_lib"
+name = "local_chat_desktop_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

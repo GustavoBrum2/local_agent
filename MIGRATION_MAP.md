@@ -6,7 +6,7 @@
 | `src/data/` | `src/data/` | Reutilizado |
 | `src/parts-repository.ts` | mesmo papel | Reutilizado |
 | `hardware-match-service.ts` | mesmo papel | Reutilizado |
-| `native-host/pc-match-host.ps1` | `src-tauri/resources/collect-hardware.ps1` | Adaptado |
+| `native-host/local-agent-host.ps1` | `src-tauri/resources/collect-hardware.ps1` | Adaptado |
 | `chrome.runtime.sendNativeMessage` | `invoke('detect_hardware')` | Substituído |
 | `native-to-detected.ts` | mesmo papel | Reutilizado |
 | `hardware-to-build.ts` | mesmo papel no primeiro MVP | Reutilizado |

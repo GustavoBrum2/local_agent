@@ -1,3 +1,3 @@
 fn main() {
-    pc_match_desktop_lib::run();
+    local_chat_desktop_lib::run();
 }

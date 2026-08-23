@@ -1,5 +1,5 @@
 # PC Match Desktop MVP - coletor Windows
-# Adaptado do native-host/pc-match-host.ps1 da extensão.
+# Adaptado do native-host/local_agent-host.ps1 da extensão.
 # Diferença principal: retorna JSON diretamente no stdout, pois o Tauri
 # substitui o protocolo length-prefixed do Chrome Native Messaging.
 

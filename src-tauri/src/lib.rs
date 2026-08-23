@@ -88,5 +88,5 @@ pub fn run() {
             delete_digital_twin
         ])
         .run(tauri::generate_context!())
-        .expect("erro ao executar PC Match Desktop");
+        .expect("erro ao executar Local Chat");
 }
