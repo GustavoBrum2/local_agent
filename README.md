@@ -1,6 +1,8 @@
-# PC Match Desktop MVP
+# Local Chat Desktop MVP
 
 Base de migração da extensão PC Match para um aplicativo desktop Tauri 2.
+
+Documentação de arquitetura, frameworks e normalização de hardware: [`docs/DOCUMENTACAO.md`](docs/DOCUMENTACAO.md).
 
 ## O que foi reaproveitado da extensão
 
