@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { detectHardwareDesktop } from '@/adapters/hardware-detector';
 import { hardwareToBuild } from '@/adapters/hardware-detector/hardware-to-build';
+import { deleteRemoteTwin, upsertRemoteTwin } from '@/digital-twin/firebase';
 import { createOrUpdateDigitalTwin } from '@/digital-twin/service';
 import { deleteDigitalTwin, loadDigitalTwin, saveDigitalTwin } from '@/digital-twin/storage';
 import type { LocalDigitalTwin } from '@/digital-twin/types';
@@ -54,7 +55,18 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
       const build = hardwareToBuild(detected, get().twin?.name ?? 'Meu PC');
       const twin = createOrUpdateDigitalTwin(get().twin, build, detected);
       await saveDigitalTwin(twin);
-      set({ twin, isDetecting: false, recommendations: [] });
+
+      try {
+        await upsertRemoteTwin(twin);
+        set({ twin, isDetecting: false, recommendations: [], error: null });
+      } catch (error) {
+        set({
+          twin,
+          isDetecting: false,
+          recommendations: [],
+          error: error instanceof Error ? error.message : String(error),
+        });
+      }
     } catch (error) {
       set({
         isDetecting: false,
@@ -78,7 +90,17 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
   },
 
   reset: async () => {
-    await deleteDigitalTwin();
-    set({ twin: null, recommendations: [], error: null });
+    const machineId = get().twin?.machineId;
+    try {
+      if (machineId) {
+        await deleteRemoteTwin(machineId);
+      }
+      await deleteDigitalTwin();
+      set({ twin: null, recommendations: [], error: null });
+    } catch (error) {
+      set({
+        error: error instanceof Error ? error.message : String(error),
+      });
+    }
   },
 }));
