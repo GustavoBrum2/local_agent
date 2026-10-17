@@ -19,6 +19,15 @@ export interface LocalDigitalTwin {
   upgrades: LocalUpgradeEvent[];
 }
 
+/** Payload sincronizado no Firebase Realtime Database, chaveado por `machineId`. */
+export interface RemoteDigitalTwin {
+  machineId: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  current: HardwareSnapshot;
+}
+
 /**
  * Reservado para a evolução pós-MVP.
  * Nesta primeira base o evento pode ser registrado manualmente,
