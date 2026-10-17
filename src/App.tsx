@@ -31,7 +31,7 @@ export default function App() {
       <header className="hero">
         <div>
           <p className="eyebrow">Agente Local</p>
-          <h1>Seu computador, entendido como um produto contínuo.</h1>
+          <h1>Da configuração atual ao próximo upgrade.</h1>
         </div>
 
         <div className="hero-actions">
