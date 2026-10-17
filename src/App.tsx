@@ -23,19 +23,15 @@ export default function App() {
   }, [initialize]);
 
   if (isLoading) {
-    return <main className="center-screen">Carregando Local Chat...</main>;
+    return <main className="center-screen">Carregando Agente Local...</main>;
   }
 
   return (
     <main className="app-shell">
       <header className="hero">
         <div>
-          <p className="eyebrow">Local Chat</p>
+          <p className="eyebrow">Agente Local</p>
           <h1>Seu computador, entendido como um produto contínuo.</h1>
-          <p className="hero-copy">
-            Primeira conversão da extensão para desktop: detecção nativa, Digital Twin local,
-            compatibilidade e recomendações usando o núcleo já desenvolvido.
-          </p>
         </div>
 
         <div className="hero-actions">
